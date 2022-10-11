@@ -1,0 +1,2 @@
+version=3
+http://search.cpan.org/dist/SGMLSpm/   .*/SGMLSpm-v?(\d[\d\w.-]+)\.(?:tar(?:\.gz|\.bz2)?|tgz|zip)$

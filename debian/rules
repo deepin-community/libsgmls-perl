@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+PACKAGE = sgmlspl
+TMP     = $(CURDIR)/debian/$(PACKAGE)
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	file-rename 's/\.pl//' $(TMP)/usr/bin/*.pl

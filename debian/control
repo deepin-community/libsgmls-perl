@@ -1,0 +1,51 @@
+Source: libsgmls-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Daniel Lintott <daniel@serverb.co.uk>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: perl,
+                     rename
+Standards-Version: 3.9.8
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libsgmls-perl.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-perl/packages/libsgmls-perl.git
+Homepage: http://search.cpan.org/dist/SGMLSpm/
+
+Package: libsgmls-perl
+Architecture: all
+Depends: ${perl:Depends},
+         ${misc:Depends}
+Suggests: sgmlspl,
+          sgmls-doc,
+          opensp | sp
+Description: Perl modules for processing SGML parser output
+ This is a set of Perl5 routines for processing the output from the onsgmls,
+ sgmls, and nsgmls SGML parsers. To make sensible use of this package you will
+ need to install a suitable SGML parser as well.
+
+Package: sgmlspl
+Architecture: all
+Section: text
+Depends: ${perl:Depends},
+         ${misc:Depends},
+         libsgmls-perl
+Suggests: sgmls-doc
+Multi-Arch: foreign
+Description: SGMLS-based example Perl script for processing SGML parser output
+ This is an example of a Perl script to post-process SGML parser output
+ using the SGMLS Perl modules.  To make sensible use of this package
+ you will need to install a suitable SGML parser as well.
+
+Package: sgmls-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Suggests: libsgmls-perl,
+          sgmlspl
+Multi-Arch: foreign
+Description: HTML documentation of libsgmls-perl and sgmlspl
+ libsgmls-perl and sgmlspl are tools for parsing the output from an SGML parser
+ .
+ This package contains the documentation in HTML format of the packages 
+ libsgmls-perl and sgmlspl.
